@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Market Insights Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Stock Market Insights Bot</h1>
+    <form method="POST">
+        <label for="query">Ask me about stock prices or market trends:</label>
+        <input type="text" name="query" required placeholder="e.g., Stock price of AAPL">
+        <input type="submit" value="Get Insights">
+    </form>
+    {% if response %}
+        <div class="response">
+            <p><strong>Answer:</strong></p>
+            <pre>{{ response }}</pre>
+        </div>
+    {% endif %}
+</body>
+</html>
